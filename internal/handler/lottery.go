@@ -22,7 +22,7 @@ func (l *LotteryHandler) Add(c *gin.Context) {
 	}
 	id := c.MustGet("userId")
 	res, err := redis.Lock(c, constants.LotteryUserLock, func() (r *response.CommonResult) {
-		reward, err := new(service.LotteryService).Add(c, &form)
+		reward, err := service.NewLotteryService().Add(c, &form)
 		if err != nil {
 			log.Printf("抽奖失败，用户ID: %v，错误: %v", id, err)
 			c.JSON(http.StatusInternalServerError, response.Fail())

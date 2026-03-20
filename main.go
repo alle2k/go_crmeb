@@ -3,6 +3,7 @@ package main
 import (
 	"boilerplate/config"
 	"boilerplate/internal/middleware"
+	"boilerplate/internal/model"
 	"boilerplate/internal/router"
 	"boilerplate/pkg/mysql"
 	"boilerplate/pkg/redis"
@@ -35,6 +36,7 @@ func main() {
 	// to see how GoLand suggests fixing the warning.</p><p>Alternatively, if available, click the lightbulb to view possible fixes.</p>
 	if 1 == 1 {
 		a()
+		fmt.Printf("%#v", model.EbLotteryRule{})
 		return
 	}
 	setup()
